@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "./App.css";
 import Posts from "./components/posts";
-// import PostsData from "./data/posts.json";
 import Filter from "./components/filter";
 
 class App extends Component {
@@ -17,16 +16,7 @@ class App extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        let posts = data.map((post, index) => {
-          return (
-            <div key={index}>
-              <h3>{post.title}</h3>
-              <p>{post.info}</p>
-            </div>
-          )
-        })
-        this.setState({posts: posts});
+        this.setState({posts: data});
       })
   }
 
@@ -35,10 +25,9 @@ class App extends Component {
       <React.Fragment>
         <Filter/>
         <main className="container">
-          {this.state.posts}
-          {/* <Posts
-            posts={PostsData}
-          /> */}
+          <Posts
+            posts={this.state.posts}
+          />
         </main>
       </React.Fragment>
     );

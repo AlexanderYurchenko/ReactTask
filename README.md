@@ -1,8 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## To run project
 
-In the project directory, you can run:
+Install create-react-app:
+npm install -g create-react-app
+
+Install json-server:
+npm install -g json-server
+
+### `json-server --watch src/data/posts.json --port 3001`
 
 ### `npm start`
 
