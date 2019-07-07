@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./App.css";
-import Posts from "./components/posts";
-import Filter from "./components/filter";
+import "./App.scss";
+import Posts from "./components/posts/posts";
+import Filter from "./components/filter/filter";
 
 class App extends Component {
   constructor(props) {
@@ -23,12 +23,17 @@ class App extends Component {
   render() { 
     return (  
       <React.Fragment>
-        <Filter/>
-        <main className="container">
-          <Posts
-            posts={this.state.posts}
-          />
-        </main>
+        <div className="w-inner">
+          <Filter/>
+          <div className="w-center">
+            <main className="container">
+              <Posts
+                posts={this.state.posts}
+              />
+            </main>
+          </div>
+        </div>
+        <div className="w-footer">Footer</div>
       </React.Fragment>
     );
   }

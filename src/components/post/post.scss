@@ -1,0 +1,134 @@
+@import '../../common.scss';
+
+.c-post {
+    position: relative;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: $bd-fill;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        
+        &:before {
+            display: none;
+        }
+    }
+
+    &__title-box {
+        position: relative;
+        display: block;
+        font-size: 18px;
+        font-weight: $font-main-medium;
+        line-height: 125%;
+        padding-left: 15px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: $decor-fill;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        &:hover,
+        &:focus-within {
+            &:before {
+                left: 9px;
+            }
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        vertical-align: top;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    &__info {
+        margin: 10px 0 0;
+    }
+
+    &__tags {
+        @extend %ul-reset-style;
+        margin: 10px -3px -3px;
+        font-size: 0;
+    }
+
+    &__tag {
+        display: inline-block;
+        vertical-align: top;
+        margin: 3px;
+        padding: 0 5px;
+        border-radius: 3px;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 20px;
+        line-height: 19px;
+        font-size: 14px;
+        color: $text-invert;
+        background: $decor-fill;
+    }
+
+    @include respond-from(xxs) {
+        flex-basis: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        &:before {
+            left: 15px;
+            right: 15px;
+        }
+
+        &:nth-last-child(2) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            
+            &:before {
+                display: none;
+            }
+        }
+
+        &__info {
+           
+        }
+    }
+
+    @include respond-from(md) {
+        flex-basis: 25%;
+
+        &:nth-last-child(3),
+        &:nth-last-child(4) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

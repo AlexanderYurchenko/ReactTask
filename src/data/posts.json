@@ -2,21 +2,51 @@
     "posts": [
         {
             "id": 1,
-            "title": "Hello World 1",
-            "info": "Try Reactjs is awesome. Can't wait to learn more.",
+            "title": "How to Rent a House",
+            "info": "When it comes to real estate rent, people often experience lots of struggles. The searching process might be challenging by itself, but it's not the only challenge people face.",
             "tags": ["room", "apartment", "house"]
         },
         {
             "id": 2,
-            "title": "Hello World 2",
-            "info": "Try Reactjs is awesome.",
-            "tags": ["room", "apartment"]
+            "title": "4 Maintenance Chores Your Clients Shouldn’t Delay",
+            "info": "Homeowners who fail to perform these upkeep tasks in a timely manner may face hefty repair bills in the future.",
+            "tags": ["house"]
         },
         {
             "id": 3,
-            "title": "Hello World 3",
-            "info": "Try Reactjs is awesome. Can't wait to learn more. Can't wait to learn more.",
+            "title": "2 Billion Records Exposed in Smart-Home Device Breach",
+            "info": "Just how secure is that “smart” security camera or door lock? That is being called into question.",
             "tags": ["apartment", "house"]
+        },
+        {
+            "id": 4,
+            "title": "Mystery Solved: The Best Way to Vacuum a Room",
+            "info": "A quick pass with a vacuum cleaner is sometimes fine, but go deep with these techniques for the best cleaning.",
+            "tags": ["apartment", "house", "room"]
+        },
+        {
+            "id": 5,
+            "title": "Suburbs Are Cool Again, and Younger Generations Swoop In",
+            "info": "Many U.S. suburbs are seeing their populations grow as millennials move out of the city and head to the ’burbs.",
+            "tags": ["house"]
+        },
+        {
+            "id": 6,
+            "title": "This Housing Trend May Radically Change Neighborhoods",
+            "info": "Oregon is the latest to loosen single-family zoning laws to pave the way for more homebuilding. Critics argue these laws are destroying neighborhoods.",
+            "tags": ["house"]
+        },
+        {
+            "id": 7,
+            "title": "Builders Will Build It, If You Rent It",
+            "info": "The build-to-rent market is exploding in growth.",
+            "tags": ["apartment", "house", "room"]
+        },
+        {
+            "id": 8,
+            "title": "Statewide PSA Warns Real Estate Scams Put You at Risk",
+            "info": "The growing threat of wire fraud in housing transactions is prompting the Utah Division of Real Estate to warn the public.",
+            "tags": ["apartment", "room"]
         }
     ]
 }

@@ -1,0 +1,38 @@
+@import '../../common.scss';
+
+.c-posts {
+    &__title {
+        position: relative;
+        font-size: 24px;
+        font-weight: $font-main-bold;
+        margin: 0 0 20px;
+        padding-bottom: 6px;
+        text-align: center;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 50%;
+            width: 78px;
+            height: 4px;
+            background: $decor-fill;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+    }
+
+    &__list {
+        @extend %ul-reset-style;
+    }
+
+    @include respond-from(xxs) {
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+}

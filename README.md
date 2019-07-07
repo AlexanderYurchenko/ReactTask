@@ -2,11 +2,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To run project
 
-Install create-react-app:
+**Install create-react-app:**
 npm install -g create-react-app
 
-Install json-server:
+**Install json-server:**
 npm install -g json-server
+
+**Install SASS compiler**
+npm install node-sass
+
+create-react-app folder
+
+cd folder/
 
 ### `json-server --watch src/data/posts.json --port 3001`
 
