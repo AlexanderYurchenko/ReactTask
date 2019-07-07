@@ -72,26 +72,7 @@
     }
 
     &__tags {
-        @extend %ul-reset-style;
-        margin: 10px -3px -3px;
-        font-size: 0;
-    }
-
-    &__tag {
-        display: inline-block;
-        vertical-align: top;
-        margin: 3px;
-        padding: 0 5px;
-        border-radius: 3px;
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 20px;
-        line-height: 19px;
-        font-size: 14px;
-        color: $text-invert;
-        background: $decor-fill;
+        margin: 10px 0 0;
     }
 
     @include respond-from(xxs) {

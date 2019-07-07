@@ -1,0 +1,32 @@
+@import '../../common.scss';
+
+.c-post-single {
+    &__title {
+        position: relative;
+        display: block;
+        font-size: 18px;
+        font-weight: $font-main-medium;
+        line-height: 125%;
+        padding-left: 15px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: $decor-fill;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+    }
+
+    &__text {
+        margin: 10px 0 0;
+    }
+
+    &__tags {
+        margin: 10px 0 0;
+    }
+}

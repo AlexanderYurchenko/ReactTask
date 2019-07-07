@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Tags from "../tags/tags";
 import "./post.scss"
 
 class Post extends Component {
@@ -11,12 +12,9 @@ class Post extends Component {
           <a href="#" className="c-post__title">{title}</a>
         </div>
         <div className="c-post__info">{info}</div>
-        <ul className="c-post__tags">
-          {tags.map((tag, index) => (
-            <li key={index} className="c-post__tag">{tag}</li>
-          ))}
-          
-        </ul>
+        <div className="c-post__tags">
+          <Tags tags={tags} />
+        </div>
       </div>
     );
   }

@@ -17,6 +17,8 @@ cd folder/
 
 ### `json-server --watch src/data/posts.json --port 3001`
 
+### `json-server --watch src/data/post1.json --port 3002`
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
