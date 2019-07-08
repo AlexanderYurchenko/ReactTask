@@ -6,7 +6,7 @@ class PostSingle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: []
+      postSingle: []
     };
   }
 
@@ -15,12 +15,12 @@ class PostSingle extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        this.setState({post: data});
+        this.setState({postSingle: data});
       })
   }
 
   render() {
-    const { title, text, tags } = this.props.post;
+    const { title, text, tags } = this.props.postSingle;
 
     return (
       <div className="c-post-single">

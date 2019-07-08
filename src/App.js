@@ -5,6 +5,14 @@ import Posts from "./components/posts/posts";
 import Filter from "./components/filter/filter";
 import PostSingle from "./components/post-single/post-single";
 
+const routes = [
+  {
+    path: '/post',
+    component: PostSingle,
+    fetchInitialData: (id) => fetchPostSingle(id)
+  }
+]
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,14 +39,22 @@ class App extends Component {
             <main className="container">
               <Router>
                 <div>
+                  
                   <Route exact path="/" component={Posts} />
                   {/* <Route path="/search" component={Posts} /> */}
-                  <Route path="/post" component={PostSingle} />
+                  {/* <Route path="/post" component={PostSingle} /> */}
+
+                  {routes.map(({ path, component, fetchInitialData}) => {
+                    <Route
+                      path={path}
+                      render={(props) => <component {...props} fetchInitialData={fetchInitialData}/>}
+                    />
+                  })}
 
 
-                  <Posts
+                  {/* <Posts
                     posts={this.state.posts}
-                  />
+                  /> */}
                 </div>
               </Router>
             </main>
