@@ -1,23 +1,16 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./App.scss";
 import Posts from "./components/posts/posts";
 import Filter from "./components/filter/filter";
 import PostSingle from "./components/post-single/post-single";
 
-const routes = [
-  {
-    path: '/post',
-    component: PostSingle,
-    fetchInitialData: (id) => fetchPostSingle(id)
-  }
-]
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      refreshPostsList: false
     };
   }
 
@@ -28,7 +21,10 @@ class App extends Component {
       .then(data => {
         this.setState({posts: data});
       })
+      .then(this.refreshPostsList)
   }
+
+  refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
 
   render() { 
     return (  
@@ -37,26 +33,34 @@ class App extends Component {
           <Filter/>
           <div className="w-center">
             <main className="container">
-              <Router>
-                <div>
-                  
-                  <Route exact path="/" component={Posts} />
-                  {/* <Route path="/search" component={Posts} /> */}
-                  {/* <Route path="/post" component={PostSingle} /> */}
+              <Switch>
+                {/* <Route exact path="/" component={Posts} /> */}
+                {/* <Route exact path="/" 
+                  render={(props) => <Posts posts={this.state.posts} {...props}/>}
+                /> */}
+                <Route exact path="/"  children={(props) => (
+                  props.match
+                    ? <Posts {...props} posts={this.state.posts} refresh={this.state.refreshPostsList}/> : ''
+                )}/>
+                {/* <Route path="/search" component={Posts} /> */}
+                <Route path="/post/:postId"  children={(props) => (
+                  props.match
+                    ? <PostSingle {...props} refresh={this.state.refreshPost}/> : ''
+                )}/>
+                {/* <Route path="/post/:postId" component={PostSingle} /> */}
 
-                  {routes.map(({ path, component, fetchInitialData}) => {
-                    <Route
-                      path={path}
-                      render={(props) => <component {...props} fetchInitialData={fetchInitialData}/>}
-                    />
-                  })}
+                {/* {routes.map(({ path, component, fetchInitialData}) => {
+                  <Route
+                    path={path}
+                    render={(props) => <component {...props} fetchInitialData={fetchInitialData}/>}
+                  />
+                })} */}
 
 
-                  {/* <Posts
-                    posts={this.state.posts}
-                  /> */}
-                </div>
-              </Router>
+                {/* <Posts
+                  posts={this.state.posts}
+                /> */}
+                </Switch>
             </main>
           </div>
         </div>

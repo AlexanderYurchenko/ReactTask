@@ -6,33 +6,45 @@ class PostSingle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postSingle: []
+      post: []
     };
   }
 
+  componentWillReceiveProps(props) {
+    // console.log('componentWillReceiveProps')
+    // console.log(props)
+  }
+
   componentDidMount() {
+    // console.log('componentDidMount')
     let url = "http://localhost:3002/post"
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        this.setState({postSingle: data});
+        this.setState({post: data});
       })
+      // console.log(this)
   }
 
   render() {
-    const { title, text, tags } = this.props.postSingle;
+    // console.log(this)
+    const { title, text, tags } = this.state.post;
+    // console.log(this.props.match.params.postId)
+    // console.log(this.state.post)
 
     return (
       <div className="c-post-single">
         <div className="c-post-single__title-box">
-          <a href="#" className="c-post-single__title">
+          <div className="c-post-single__title">
             {title}
-          </a>
+          </div>
         </div>
-        <div className="c-post-single__text">{text}</div>
-        <ul className="c-post-single__tags">
+        <div className="c-post-single__text">
+        {text}
+        </div>
+        <div className="c-post-single__tags">
           <Tags tags={tags} />
-        </ul>
+        </div>
       </div>
     );
   }

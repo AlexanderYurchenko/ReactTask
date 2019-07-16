@@ -1,16 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import "./tags.scss"
 
-const Tags = (props) => {
-  return (
-    <ul className="c-tags">
-      {props.tags.map((tag, index) => (
+class Tags extends Component {
+  recieveTags() {
+    if (this.props.tags) {
+      const res = this.props.tags.map((tag, index) => (
         <li key={index} className="c-tags__item">
           {tag}
         </li>
-      ))}
-    </ul>
-  );
-};
+      ))
+      return res
+    }
+  }
+
+  render() { 
+    return (
+      <ul className="c-tags">
+        {this.recieveTags()}
+      </ul>
+    );
+  }
+}
 
 export default Tags;

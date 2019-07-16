@@ -1,10 +1,8 @@
 {
-    "post": [
-        {
-            "id": 1,
-            "title": "8.2M Could Have Lower Mortgage Payments",
-            "text": "Mortgage rates are dropping, giving millions of homeowners an opportunity to lower their monthly payments. An estimated 8.2 million borrowers could refinance and potentially lower their monthly payments by at least 75 basis points, estimates Black Knight, a mortgage software and analytics firm. This marks the largest percentage of homeowners who stand to benefit from lower mortgage rates since the end of 2016. Last week, the average 30-year fixed-rate mortgage reached a two-and-a-half-year low of 3.73%, Freddie Mac reports. The average borrower stands to save about $266 per month on their mortgage by refinancing, according to Black Knight. About 1.5 million borrowers—or 35% of those who took out their loans last year—could benefit from refinancing, the report notes. Refinancing can lower monthly payments and also provide access to money for homeowners who have substantial home equity. About 44 million borrowers have at least 20% equity in their homes. The average amount available to access is $136,000, Black Knight reports. Borrowers, however, are being more conservative in tapping into home equity than in years past. About $54 billion was withdrawn in home equity in the first quarter of this year—the lowest amount in four years. Black Knight reports that less than 1% of available equity has been withdrawn.",
-            "tags": ["room", "apartment", "house"]
-        }
-    ]
+    "post": {
+        "id": 1,
+        "title": "8.2M Could Have Lower Mortgage Payments",
+        "text": "Mortgage rates are dropping, giving millions of homeowners an opportunity to lower their monthly payments. An estimated 8.2 million borrowers could refinance and potentially lower their monthly payments by at least 75 basis points, estimates Black Knight, a mortgage software and analytics firm. This marks the largest percentage of homeowners who stand to benefit from lower mortgage rates since the end of 2016. Last week, the average 30-year fixed-rate mortgage reached a two-and-a-half-year low of 3.73%, Freddie Mac reports. The average borrower stands to save about $266 per month on their mortgage by refinancing, according to Black Knight. About 1.5 million borrowers—or 35% of those who took out their loans last year—could benefit from refinancing, the report notes. Refinancing can lower monthly payments and also provide access to money for homeowners who have substantial home equity. About 44 million borrowers have at least 20% equity in their homes. The average amount available to access is $136,000, Black Knight reports. Borrowers, however, are being more conservative in tapping into home equity than in years past. About $54 billion was withdrawn in home equity in the first quarter of this year—the lowest amount in four years. Black Knight reports that less than 1% of available equity has been withdrawn.",
+        "tags": ["room", "apartment", "house"]
+    }
 }
