@@ -10,27 +10,22 @@ class PostSingle extends Component {
     };
   }
 
-  componentWillReceiveProps(props) {
-    // console.log('componentWillReceiveProps')
-    // console.log(props)
-  }
-
   componentDidMount() {
-    // console.log('componentDidMount')
-    let url = "http://localhost:3002/post"
+    // let url = "http://localhost:3002/post"
+    const postRegExp = new RegExp("([^\/]+$)")
+    const postId = postRegExp.exec(this.props.match.url)
+    console.log(postId[1])
+    let url = "https://raw.githubusercontent.com/AlexanderYurchenko/ReactTask/master/src/data/post" + postId[1] + ".json"
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        this.setState({post: data});
+        this.setState({post: data.post});
       })
-      // console.log(this)
   }
 
   render() {
-    // console.log(this)
+    console.log(this)
     const { title, text, tags } = this.state.post;
-    // console.log(this.props.match.params.postId)
-    // console.log(this.state.post)
 
     return (
       <div className="c-post-single">

@@ -20,8 +20,6 @@ class Posts extends Component {
   }
   
   render() {
-    const { posts } = this.props;
-
     return (
       <div className="c-posts">
         <h2 className="c-posts__title">Posts List</h2>

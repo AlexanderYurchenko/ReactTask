@@ -1,0 +1,10 @@
+{
+    "post": {
+        "id": 3,
+        "author": "Norah Greene",
+        "phone": "6949220530",
+        "title": "2 Billion Records Exposed in Smart-Home Device Breach",
+        "text": "Just how secure is that “smart” security camera or door lock? That is being called into question after reports of a massive data breach hitting the smart-home industry that could extend to smart locks, home security cameras, and full smart-home kits. An database for devices manufactured by Orvibo, which runs an “internet of things” management platform, was left exposed to the internet without any password protection, security researchers with vpnMentor recently uncovered. The database includes more than 2 billion logs containing everything from user passwords to account reset codes and even conversations recorded by smart cameras, Forbes.com reports.",
+        "tags": ["apartment", "house"]
+    }
+}
