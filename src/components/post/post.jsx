@@ -17,7 +17,6 @@ class Post extends Component {
         <div className="c-post__tags">
           <Tags tags={tags} />
         </div>
-        {/* <Route path="/post/:id" component={PostSingle} /> */}
         <Route path="/post/:postId"  children={(props) => (
           props.match
             ? <PostSingle {...props}/> : ''

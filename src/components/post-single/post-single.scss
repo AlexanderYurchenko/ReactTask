@@ -22,8 +22,31 @@
         }
     }
 
-    &__text {
+    &__head {
+        display: flex;
+        justify-content: space-between;
         margin: 10px 0 0;
+    }
+
+    &__author {
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 18px;
+        color: #5c83f0;
+    }
+
+    &__date {
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 14px;
+        white-space: nowrap;
+        text-align: right;
+        margin: 4px 0 0;
+    }
+
+    &__text {
+        margin: 16px 0 0;
+        line-height: 139%;
     }
 
     &__tags {
