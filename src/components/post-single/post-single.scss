@@ -4,7 +4,7 @@
     &__title {
         position: relative;
         display: block;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: $font-main-medium;
         line-height: 125%;
         padding-left: 15px;
@@ -33,6 +33,14 @@
         vertical-align: baseline;
         font-size: 18px;
         color: #5c83f0;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none;
+            text-decoration: underline;
+        }
     }
 
     &__date {
