@@ -10,7 +10,9 @@ class App extends Component {
     super(props);
     this.state = {
       posts: [],
-      refreshPostsList: false
+      refreshPostsList: false,
+      tags: [],
+      refreshTagsList: false
     };
   }
 
@@ -23,15 +25,27 @@ class App extends Component {
         this.setState({posts: data.posts});
       })
       .then(this.refreshPostsList)
+
+    let tagsUrl = "https://raw.githubusercontent.com/AlexanderYurchenko/ReactTask/master/src/data/tags.json"
+    fetch(tagsUrl)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({tags: data.tags});
+      })
+      .then(this.refreshTagsList)
   }
 
   refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
+
+  handleFilter = () => {
+    
+  }
 
   render() { 
     return (  
       <React.Fragment>
         <div className="w-inner">
-          <Filter/>
+          <Filter onFilter={this.handleFilter}/>
           <div className="w-center">
             <main className="container">
               <Switch>
