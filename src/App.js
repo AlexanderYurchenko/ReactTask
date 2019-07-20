@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.scss";
 import Posts from "./components/posts/posts";
 import Filter from "./components/filter/filter";
@@ -12,7 +12,10 @@ class App extends Component {
       posts: [],
       refreshPostsList: false,
       tags: [],
-      refreshTagsList: false
+      refreshTagsList: false,
+      searchValue: false,
+      filteredPosts: false,
+      redirect: false
     };
   }
 
@@ -37,25 +40,56 @@ class App extends Component {
 
   refreshPostsList = () => this.setState({refreshPostsList: !this.state.refreshPostsList})
 
-  handleFilter = () => {
-    
+  refreshTagsList = () => this.setState({refreshTagsList: !this.state.refreshTagsList})
+
+  handleFilter = (value) => {
+    const formattedValue = value.toLowerCase();
+    this.setState({ searchValue: formattedValue })
+    const filteredPosts = this.state.posts.filter(function(post){
+      let result = false;
+      post.tags.forEach(function(tag){        
+        if (tag.toLowerCase().search(formattedValue) !== -1) {
+          result = true
+        }
+      })
+      return result
+    });
+
+    this.setState({ filteredPosts, redirect: true })
   }
 
   render() { 
+    const { posts, refreshPostsList, tags, refreshTagsList, refreshPost, filteredPosts, redirect } = this.state;
+
+    let redirectComp;
+    if (redirect) {
+      redirectComp = <Redirect to={ "/search/" + this.state.searchValue }/>;
+    }
+
     return (  
       <React.Fragment>
         <div className="w-inner">
-          <Filter onFilter={this.handleFilter}/>
+          <Filter 
+            tags={tags}
+            onFilter={this.handleFilter}
+            refresh={refreshTagsList}
+            placeholder="Search by tag"
+            />
           <div className="w-center">
             <main className="container">
+              {redirectComp}
               <Switch>
-                <Route exact path="/"  children={(props) => (
+                <Route exact path="/" children={(props) => (
                   props.match
-                    ? <Posts {...props} posts={this.state.posts} refresh={this.state.refreshPostsList}/> : ''
+                    ? <Posts {...props} posts={posts} refresh={refreshPostsList}/> : ''
                 )}/>
-                <Route path="/post/:postId"  children={(props) => (
+                <Route path="/post/:postId" children={(props) => (
                   props.match
-                    ? <PostSingle {...props} refresh={this.state.refreshPost}/> : ''
+                    ? <PostSingle {...props} refresh={refreshPost}/> : ''
+                )}/>
+                <Route path={ "/search/" + this.state.searchValue } children={(props) => (
+                  props.match
+                  ? <Posts {...props} posts={filteredPosts}/> : ''
                 )}/>
                 </Switch>
             </main>

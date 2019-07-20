@@ -13,6 +13,18 @@
         padding: 0 15px;
     }
 
+    &__logo {
+        display: inline-block;
+        vertical-align: top;
+        width: 150px;
+        height: 42px;
+
+        svg {
+            width: auto;
+            height: 100%;
+        }
+    }
+
     &__box {
         float: right;
     }
