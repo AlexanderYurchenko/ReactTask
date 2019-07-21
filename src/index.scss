@@ -1,5 +1,5 @@
-@import './common.scss';
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap');
+@import "./common.scss";
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap");
 
 body {
   margin: 0;
@@ -10,43 +10,46 @@ body {
   color: $text-main;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   min-width: 320px;
 }
 
 #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .w-inner {
-    position: relative;
+  position: relative;
 }
 
 .w-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px 0 0;
-    padding: 15px;
-    height: 100px;
-    background: #f4f6fc;
-    font-size: 22px;
-    text-transform: uppercase;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0 0;
+  padding: 15px;
+  height: 100px;
+  background: #f4f6fc;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .w-center {
-    max-width: $page-width;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 15px;
+  max-width: $page-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
 }

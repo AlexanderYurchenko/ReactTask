@@ -5,19 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 **Install create-react-app:**
 npm install -g create-react-app
 
-**Install json-server:**
-npm install -g json-server
-
 **Install SASS compiler**
 npm install node-sass
 
 create-react-app folder
 
 cd folder/
-
-### `json-server --watch src/data/posts.json --port 3001`
-
-### `json-server --watch src/data/post1.json --port 3002`
 
 ### `npm start`
 
@@ -81,3 +74,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## If local JSON server is needed
+
+**Install json-server:**
+npm install -g json-server
+
+### `json-server --watch src/data/posts.json --port 3001`
+
+### `json-server --watch src/data/post1.json --port 3002`
