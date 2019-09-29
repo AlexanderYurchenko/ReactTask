@@ -67,8 +67,6 @@ class Filter extends Component {
             </svg>
           </Link>
           <div className="c-filter__box">
-
-            {/* with default select */}
             <select className="c-filter__select" 
               onChange={(event) => this.props.onFilter(event.target.value)}
             >
@@ -79,8 +77,6 @@ class Filter extends Component {
           </div>
         </div>
       </div>
-
-
     );
   }
 }
