@@ -59,11 +59,11 @@ class App extends Component {
   }
 
   render() { 
-    const { posts, refreshPostsList, tags, refreshTagsList, refreshPost, filteredPosts, redirect } = this.state;
+    const { posts, refreshPostsList, tags, refreshTagsList, refreshPost, filteredPosts, redirect, searchValue } = this.state;
 
     let redirectComp;
     if (redirect) {
-      redirectComp = <Redirect to={ "/search/" + this.state.searchValue }/>;
+      redirectComp = <Redirect to={ "/search/" + searchValue }/>;
     }
 
     return (  
@@ -87,11 +87,11 @@ class App extends Component {
                   props.match
                     ? <PostSingle {...props} refresh={refreshPost}/> : ''
                 )}/>
-                <Route path={ "/search/" + this.state.searchValue } children={(props) => (
+                <Route path={ "/search/" + searchValue } children={(props) => (
                   props.match
                   ? <Posts {...props} posts={filteredPosts}/> : ''
                 )}/>
-                </Switch>
+              </Switch>
             </main>
           </div>
         </div>
